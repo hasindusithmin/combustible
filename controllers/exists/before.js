@@ -4,7 +4,7 @@
 const StationOwnerModel = require("../../models/station-owner")
 const VehicleOwnerModel = require("../../models/vehicle-owner")
 
-module.exports =  async function handler(req,res) {
+module.exports =  async function before_handler(req,res) {
     try {
         const {id,username,user_id} = req.body;
         if (id === undefined) throw Error("id (query) is required.")
