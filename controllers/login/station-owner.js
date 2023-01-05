@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken");
 const StationOwnerModel = require("../../models/station-owner")
 
-module.exports = async function handler(req,res) {
+module.exports = async function station_handler(req,res) {
     try {
         const {EMAIL,PASSWORD} = req.body;
         const user = await StationOwnerModel.login(EMAIL,PASSWORD)

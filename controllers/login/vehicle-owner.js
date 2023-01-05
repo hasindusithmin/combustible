@@ -4,7 +4,7 @@
 const jwt = require("jsonwebtoken");
 const vehicleOwnerModel = require("../../models/vehicle-owner")
 
-export default async function handler(req,res) {
+export default async function vehicle_handler(req,res) {
     try {
         const {EMAIL,PASSWORD} = req.body;
         const user  = await vehicleOwnerModel.login(EMAIL,PASSWORD)
