@@ -16,7 +16,7 @@ joinRoute.post('/', async(req, res) => {
         const { USERNAME, VEHICLE, FUEL, QTY, USER_ID, QUEUE } = req.body;
         if (QUEUE !== "") {
             const DOMAIN = (process.env.ENVIROMENT === 'production') ? 'https://combustible.deta.dev/' : 'http://127.0.0.1:3000'
-            await fetch(`${DOMAIN}/api/exits/before`, {
+            await fetch(`${DOMAIN}/exits/before`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

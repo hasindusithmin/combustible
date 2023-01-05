@@ -29,6 +29,8 @@ app.post('/verify', (req, res) => {
     }
 })
 
+
+
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
