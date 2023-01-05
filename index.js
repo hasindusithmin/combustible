@@ -29,7 +29,13 @@ app.post('/verify', (req, res) => {
     }
 })
 
-
+app.use('/signup',require('./routes/signup'))
+app.use('/login',require('./routes/login'))
+app.use('/read',require('./routes/read'))
+app.use('/readone',require('./routes/readone'))
+app.use('/update',require('./routes/update'))
+app.use('/exists',require('./routes/exists'))
+app.use('/join',require('./routes/joined-queue'))
 
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env.MONGO_URL)
