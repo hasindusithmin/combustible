@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
+const jwt = require("jsonwebtoken");
 
 const app = express()
 
@@ -15,6 +16,16 @@ app.get('/logout', (req, res) => {
         res.redirect('/')
     } catch (error) {
         res.status(500).json({ ERROR: error.message })
+    }
+})
+
+app.post('/verify', (req, res) => {
+    try {
+        const { token } = req.headers;
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        res.status(200).json(decoded)
+    } catch (error) {
+        res.status(401).json({ ERROR: error.message })
     }
 })
 
