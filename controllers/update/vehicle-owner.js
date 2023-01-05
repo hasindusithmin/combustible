@@ -1,6 +1,5 @@
 
 
-const jwt = require("jsonwebtoken");
 const vehicleOwnerModel = require("../../models/vehicle-owner")
 
 export default async function vehicle_handler(req, res) {

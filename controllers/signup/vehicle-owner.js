@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken");
 const vehicleOwnerModel = require("../../models/vehicle-owner")
 
-module.exports =  async function handler(req, res) {
+module.exports =  async function vehicle_handler(req, res) {
     try {
         const {
             PROVINCE,
