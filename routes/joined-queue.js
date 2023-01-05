@@ -35,3 +35,5 @@ joinRoute.post('/', async(req, res) => {
         res.status(500).json({ ERROR: error.message })
     }
 }) 
+
+module.exports = joinRoute;

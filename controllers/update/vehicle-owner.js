@@ -2,7 +2,7 @@
 
 const vehicleOwnerModel = require("../../models/vehicle-owner")
 
-export default async function vehicle_handler(req, res) {
+module.exports =  async function vehicle_handler(req, res) {
     try {
         const {ID,EMAIL, CONTACT,FIRSTNAME, LASTNAME, VEHICLE,FUEL}= req.body;
         let QTY = (VEHICLE === 'BIKE') ? 4 : (VEHICLE === '3WHEEL') ? 5 : 20

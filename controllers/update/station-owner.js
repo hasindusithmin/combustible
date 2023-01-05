@@ -1,7 +1,7 @@
 
 const StationOwnerModel = require("../../models/station-owner")
 
-export default async function station_handler(req,res) {
+module.exports =  async function station_handler(req,res) {
     try {
         const {ID,EMAIL, CONTACT, ARRIVALTIME, FINISHTIME, DIESEL, PETROL} = req.body;
         const user = await StationOwnerModel.findByIdAndUpdate(ID,{$set:{EMAIL, CONTACT, ARRIVALTIME, FINISHTIME, DIESEL, PETROL}})

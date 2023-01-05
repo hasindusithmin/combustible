@@ -2,9 +2,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const jwt = require("jsonwebtoken");
+const cors = require("cors")
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
@@ -34,7 +36,7 @@ app.use('/login',require('./routes/login'))
 app.use('/read',require('./routes/read'))
 app.use('/readone',require('./routes/readone'))
 app.use('/update',require('./routes/update'))
-app.use('/exists',require('./routes/exists'))
+app.use('/exists',require('./routes/exits'))
 app.use('/join',require('./routes/joined-queue'))
 
 mongoose.set('strictQuery', true)
